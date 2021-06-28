@@ -1,7 +1,7 @@
 import requests, json, random, time, socket, platform
 
 timestr = time.strftime("%Y-%m-%d - %H:%M:%S UTC")
-nameid = "Project-t"
+nameid = "ObadiahHarahap"
 repoid = "Project-t"
 yamlid = "generate_build"
 f = open("./README.md", "w")
