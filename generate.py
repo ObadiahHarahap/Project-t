@@ -1,5 +1,9 @@
-import requests, json, random
+import requests, json, random, time, socket, platform
 
+timestr = time.strftime("%Y-%m-%d - %H:%M:%S UTC")
+nameid = "Project-t"
+repoid = "Project-t"
+yamlid = "generate_build"
 f = open("./README.md", "w")
 pokemon_id = random.randint(1, 151)
 res = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}')
@@ -9,26 +13,54 @@ f.write(f'''
 <p align="center">
     <img src="{result['sprites']['front_default']}" width="150" height="150">
 </p>
+
 <h3 align="center">You have been greeted by a wild <b>{result['name'].title()}</b></h3>
+
+<a href="https://github.com/{nameid}"><h3 align="center"><b>{nameid}</b></h3></a>
+
 <h3 align="center">Have a nice day!</h3>
 
-# wireguard-go-builder
+<p align="center">
 
-Compiling the [wireguard-go](https://git.zx2c4.com/wireguard-go/) binary from source. With this binary, users are able to create WireGuard sessions without installing the kernel module (if not preloaded for Linux Kernel 5.6 and above).
+  <a href="https://github.com/{nameid}">
+    <img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username={nameid}&hide=issues&hide_title=true&include_all_commits=true&bg_color=30,e96443,904e95&title_color=fff&text_color=fff" />
+   </a>
+   
+#### This Page Create at:
 
-## Download
+```bash
 
-The latest version of the binary can be downloaded by clicking on the following link.
-
-
-
-## Install
-
-You can easily use a one-click script to automatically install to your Linux device:
+{timestr}
 
 ```
-curl -fsSL git.io/wireguard-go.sh | sudo bash
+
+#### Create By Machine:
+
+```bash
+
+Host Name : {socket.gethostname()}
+
+platform  : {platform.platform()}
+
+Ip Local  : {socket.gethostbyname(socket.gethostname())}
+
 ```
-       
+
+[![build_firmware](https://github.com/{nameid}/{nameid}/actions/workflows/generate_readme.yml/badge.svg)](https://github.com/{nameid}/{nameid}/actions/workflows/generate_readme.yml) [![{yamlid}](https://github.com/{nameid}/{repoid}/actions/workflows/{yamlid}.yml/badge.svg)](https://github.com/{nameid}/{repoid}/actions/workflows/{yamlid}.yml)
+
+#### Download This code Here:
+
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/{nameid}/{repoid}?style=for-the-badge&label=Download)](https://github.com/{nameid}/{repoid}/releases) 
+
+</p> 
+
+#### About Me :
+
+```bash
+
+{nameid}
+
+```
+
 ''')
 f.close()
